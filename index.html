@@ -8,17 +8,58 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome 6.4 for TikTok support -->
+    <!-- Font Awesome 6.4 for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Stylesheets -->
+    <!-- Main Stylesheets -->
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Floating WhatsApp Icon CSS -->
+    <style>
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25D366;
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 28px;
+        z-index: 1000;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        animation: pulse 1.5s infinite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .whatsapp-float:hover {
+        color: white;
+        text-decoration: none;
+        background-color: #1ebe5d;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.15);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
   </head>
+
   <body>
     <div class="wrap">
       <div class="container">
@@ -53,7 +94,9 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Rhein-Neckar <span>Polsterreinigung</span></a>
+        <a class="navbar-brand" href="index.html">
+            Rhein-Neckar <span>
+                Polsterreinigung</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
           aria-controls="ftco-nav" aria-expanded="false" aria-label="Navigation umschalten">
           <span class="fa fa-bars"></span> Menü
@@ -85,6 +128,12 @@
         </div>
       </div>
     </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/4917621897246" class="whatsapp-float" target="_blank" aria-label="Chat auf WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
   </body>
 </html>
 
