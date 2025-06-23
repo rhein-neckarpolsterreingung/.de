@@ -134,7 +134,6 @@
       }
 
       .puzzle-piece {
-        background-image: url('images/home.png'); /* Replace with your actual image path */
         background-size: 500% 500%;
         background-repeat: no-repeat;
         opacity: 0;
@@ -150,7 +149,7 @@
       .hero-content.centered {
         position: absolute;
         top: 50%;
-        left: 25%; /* Centered in left half */
+        left: 25%;
         transform: translate(-25%, -50%);
         z-index: 3;
         color: #ffffff;
@@ -198,33 +197,75 @@
     <script>
       const rows = 5, cols = 5;
       const puzzleContainer = document.getElementById('puzzle');
+      const images = ['images/home.png', 'images/home2.png'];
+      let currentIndex = 0;
 
-      for (let row = 0; row < rows; row++) {
-        for (let col = 0; col < cols; col++) {
-          const piece = document.createElement('div');
-          piece.className = 'puzzle-piece';
-          piece.style.backgroundPosition = `${(col * 100) / (cols - 1)}% ${(row * 100) / (rows - 1)}%`;
-          puzzleContainer.appendChild(piece);
+      function createPieces(imageUrl) {
+        puzzleContainer.innerHTML = '';
+        for (let row = 0; row < rows; row++) {
+          for (let col = 0; col < cols; col++) {
+            const piece = document.createElement('div');
+            piece.className = 'puzzle-piece';
+            piece.style.backgroundImage = `url(${imageUrl})`;
+            piece.style.backgroundPosition = `${(col * 100) / (cols - 1)}% ${(row * 100) / (rows - 1)}%`;
+            puzzleContainer.appendChild(piece);
+          }
         }
       }
 
-      const pieces = document.querySelectorAll('.puzzle-piece');
-      pieces.forEach((piece, index) => {
-        const xDir = (Math.random() - 0.5) * 1000;
-        const yDir = (Math.random() - 0.5) * 1000;
-        gsap.fromTo(piece, {
-          x: xDir,
-          y: yDir,
-          opacity: 0,
-        }, {
-          x: 0,
-          y: 0,
-          opacity: 1,
-          delay: index * 0.06,   // Slower sequence
-          duration: 2.0,         // Slower motion
-          ease: "power4.out"
+      function animatePiecesIn(pieces) {
+        pieces.forEach((piece, index) => {
+          const xDir = (Math.random() - 0.5) * 1000;
+          const yDir = (Math.random() - 0.5) * 1000;
+          gsap.fromTo(piece, {
+            x: xDir,
+            y: yDir,
+            opacity: 0,
+          }, {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            delay: index * 0.06,
+            duration: 2.0,
+            ease: "power4.out"
+          });
         });
-      });
+      }
+
+      function animatePiecesOut(pieces, onComplete) {
+        pieces.forEach((piece, index) => {
+          const xDir = (Math.random() - 0.5) * 1000;
+          const yDir = (Math.random() - 0.5) * 1000;
+          gsap.to(piece, {
+            x: xDir,
+            y: yDir,
+            opacity: 0,
+            delay: index * 0.03,
+            duration: 1.2,
+            ease: "power2.in",
+            onComplete: index === pieces.length - 1 ? onComplete : null
+          });
+        });
+      }
+
+      function cycleImages() {
+        const imageUrl = images[currentIndex];
+        createPieces(imageUrl);
+
+        const pieces = puzzleContainer.querySelectorAll('.puzzle-piece');
+        animatePiecesIn(pieces);
+
+        // Show image, wait, then remove
+        setTimeout(() => {
+          animatePiecesOut(pieces, () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            cycleImages();
+          });
+        }, 5000); // stay visible for 5 seconds
+      }
+
+      // Start animation loop
+      cycleImages();
     </script>
 
     <!-- Über uns -->
