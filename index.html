@@ -197,45 +197,56 @@
     <section class="ftco-section py-0">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-md-12 d-flex">
-            <div class="staff w-100 d-md-flex" style="gap: 0; height: 600px;">
-              
-              <!-- Owner Image -->
-              <div class="img-wrap" style="flex: 0 0 350px; max-width: 350px; height: 100%;">
-                <div class="img align-self-stretch"
-                     style="background-image: url(images/owner.png); background-size: cover; background-position: center; width: 100%; height: 100%; border-radius: 10px 0 0 10px;">
-                </div>
-              </div>
+          <div class="col-12 d-flex flex-md-row flex-column w-100">
 
-              <!-- Text Box -->
-              <div class="text-box text p-4 text-md-left d-flex flex-column justify-content-center"
-                   style="flex: 1; background-color: #0d1b2a; color: white; height: 100%; border-radius: 0 10px 10px 0; transition: background-color 0.3s;">
-                <h3 style="color: white;">Benjamin Jahić</h3>
-                <span class="position mb-2 d-block" style="color: #ddd;">Inhaber & Ansprechpartner</span>
-                <p style="color: #ccc;">Als Ihr persönlicher Ansprechpartner stehe ich Ihnen gerne bei allen Fragen zur Verfügung. Ich kümmere mich persönlich um Ihre Polstermöbel – mit Sorgfalt, Effizienz und dem Auge fürs Detail.</p>
-                <p>
-                  <strong style="color: white;">Telefon:</strong>
-                  <a href="tel:+4917621897246" style="color: white; text-decoration: underline;">+49 176 21897246</a><br>
-                  <strong style="color: white;">E-Mail:</strong>
-                  <a href="mailto:benjaminincleaning@gmail.com" style="color: white; text-decoration: underline;">benjaminincleaning@gmail.com</a>
-                </p>
-              </div>
-
+            <!-- Owner Image -->
+            <div class="img-wrap w-100" style="max-width: 300px; flex-shrink: 0;">
+              <img src="images/owner.png" alt="Benjamin Jahić"
+                   style="width: 100%; height: 100%; max-height: 500px; object-fit: cover; border-radius: 10px 0 0 10px;">
             </div>
+
+            <!-- Text Box -->
+            <div class="text-box text p-4 d-flex flex-column justify-content-center w-100"
+                 style="background-color: #0d1b2a; color: white; border-radius: 0 10px 10px 0; transition: background-color 0.3s;">
+              <h3 style="color: white;">Benjamin Jahić</h3>
+              <span class="position mb-2 d-block" style="color: #ddd;">Inhaber & Ansprechpartner</span>
+              <p style="color: #ccc;">Als Ihr persönlicher Ansprechpartner stehe ich Ihnen gerne bei allen Fragen zur Verfügung. Ich kümmere mich persönlich um Ihre Polstermöbel – mit Sorgfalt, Effizienz und dem Auge fürs Detail.</p>
+              <p>
+                <strong style="color: white;">Telefon:</strong>
+                <a href="tel:+4917621897246" style="color: white; text-decoration: underline;">+49 176 21897246</a><br>
+                <strong style="color: white;">E-Mail:</strong>
+                <a href="mailto:benjaminincleaning@gmail.com" style="color: white; text-decoration: underline;">benjaminincleaning@gmail.com</a>
+              </p>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Add this style block to your CSS or inside a <style> tag -->
+    <!-- Responsive and Hover Styling -->
     <style>
       .text-box:hover {
         background-color: #2c2c2c !important;
       }
+
+      @media (max-width: 767.98px) {
+        .img-wrap {
+          max-width: 100% !important;
+        }
+
+        .img-wrap img {
+          border-radius: 10px 10px 0 0 !important;
+          width: 100% !important;
+          height: auto !important;
+        }
+
+        .text-box {
+          border-radius: 0 0 10px 10px !important;
+        }
+      }
     </style>
 
-
-            
 
 
     <!-- Leistungen -->
