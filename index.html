@@ -105,18 +105,113 @@
     </nav>
 
     <!-- Hero Section -->
-    <div id="home" class="hero-wrap js-fullheight" style="background-image: url('images/home.jpeg');" data-stellar-background-ratio="0.5">
+    <div id="home" class="hero-wrap">
+      <div class="puzzle-container" id="puzzle"></div>
       <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
-          <div class="col-md-6 ftco-animate">
-            <h2 class="subheading">Professionelle Polsterreinigung</h2>
-            <h1 class="mb-4">Suchen Sie einen zuverlässigen Polsterreiniger?</h1>
-            <p><a href="#contact" class="btn btn-primary mr-md-4 py-2 px-4">Wir helfen gern! <span class="ion-ios-arrow-forward"></span></a></p>
-          </div>
-        </div>
+      <div class="hero-content centered">
+        <h2 class="subheading">Professionelle Polsterreinigung</h2>
+        <h1 class="mb-4">Suchen Sie einen zuverlässigen Polsterreiniger?</h1>
+        <p><a href="#contact" class="btn btn-primary py-2 px-4">Wir helfen gern! <span class="ion-ios-arrow-forward"></span></a></p>
       </div>
     </div>
+
+    <!-- Styles -->
+    <style>
+      .hero-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+      }
+
+      .puzzle-container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        z-index: 1;
+      }
+
+      .puzzle-piece {
+        background-image: url('images/home.png'); /* Change to your image path */
+        background-size: 500% 500%;
+        background-repeat: no-repeat;
+        opacity: 0;
+      }
+
+      .overlay {
+        background: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: 2;
+      }
+
+      .hero-content.centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        color: #ffffff;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .hero-content.centered h1,
+      .hero-content.centered h2,
+      .hero-content.centered p {
+        color: #ffffff;
+      }
+
+      .btn-primary {
+        background-color: #ffc107;
+        border: none;
+        color: black;
+        font-weight: bold;
+        border-radius: 4px;
+        transition: background 0.3s;
+        text-decoration: none;
+      }
+
+      .btn-primary:hover {
+        background-color: #e0a800;
+      }
+    </style>
+
+    <!-- GSAP Puzzle Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+      const rows = 5, cols = 5;
+      const puzzleContainer = document.getElementById('puzzle');
+
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          const piece = document.createElement('div');
+          piece.className = 'puzzle-piece';
+          piece.style.backgroundPosition = `${(col * 100) / (cols - 1)}% ${(row * 100) / (rows - 1)}%`;
+          puzzleContainer.appendChild(piece);
+        }
+      }
+
+      const pieces = document.querySelectorAll('.puzzle-piece');
+      pieces.forEach((piece, index) => {
+        const xDir = (Math.random() - 0.5) * 1000;
+        const yDir = (Math.random() - 0.5) * 1000;
+        gsap.fromTo(piece, {
+          x: xDir,
+          y: yDir,
+          opacity: 0,
+        }, {
+          x: 0,
+          y: 0,
+          opacity: 1,
+          delay: index * 0.03,
+          duration: 1.2,
+          ease: "power4.out"
+        });
+      });
+    </script>
 
     <!-- Über uns -->
     <section id="about" class="ftco-section">
