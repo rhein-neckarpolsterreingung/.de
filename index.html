@@ -569,6 +569,7 @@
     </section>
 
     <!-- Contact Section with Light Blue Background -->
+    
     <section id="contact" class="py-5" style="background-color: #eaf4fb;">
       <div class="container">
         <h2 class="text-center mb-5">Kontakt</h2>
@@ -675,14 +676,69 @@
               </div>
 
               <!-- Car Box -->
-              <div class="position-relative text-white text-center p-4 rounded shadow-sm" style="background: url('images/car.png') center/cover no-repeat; min-height: 180px;">
-                <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50 rounded"></div>
-                <div class="position-relative z-1">
-                  <i class="fa fa-map-marker fa-2x mb-2"></i>
-                  <p class="mb-1 fs-5 fw-bold">Mobil unterwegs</p>
-                  <p class="mb-0 small">Wir kommen zu Ihnen!</p>
+              <head>
+                <meta charset="UTF-8">
+                <title>Mobil unterwegs</title>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+                <style>
+                  .car-box {
+                    position: relative;
+                    color: white;
+                    text-align: center;
+                    padding: 1.5rem;
+                    border-radius: 0.5rem;
+                    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+                    background: url('images/car.png') center/cover no-repeat;
+                    min-height: 180px;
+                    overflow: hidden;
+                    width: 100%;
+                  }
+
+                  .car-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0,0,0,0.5);
+                    border-radius: 0.5rem;
+                    z-index: 0;
+                  }
+
+                  .car-content {
+                    position: relative;
+                    z-index: 1;
+                  }
+
+                  .car-content i {
+                    font-size: 2rem;
+                    margin-bottom: 0.5rem;
+                    display: block;
+                  }
+
+                  .car-content .title {
+                    margin-bottom: 0.25rem;
+                    font-size: 1.25rem;
+                    font-weight: bold;
+                  }
+
+                  .car-content .subtitle {
+                    font-size: 0.875rem;
+                  }
+                </style>
+              </head>
+              <body>
+
+                <div class="car-box">
+                  <div class="car-overlay"></div>
+                  <div class="car-content">
+                    <i class="fa fa-map-marker"></i>
+                    <p class="title">Mobil unterwegs</p>
+                    <p class="subtitle">Wir kommen zu Ihnen!</p>
+                  </div>
                 </div>
-              </div>
+
+              </body>
             </div>
           </div>
         </div>
@@ -692,14 +748,58 @@
 
     <!-- FontAwesome (for icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <!-- Bootstrap (if not already included) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-
+   
 
     <!-- WhatsApp Button -->
     <a href="https://wa.me/4917621897246" class="whatsapp-float" target="_blank" aria-label="Chat auf WhatsApp">
       <i class="fab fa-whatsapp"></i>
     </a>
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Nach oben">
+      <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- Scroll to Top Styles -->
+    <style>
+      #scrollTopBtn {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9999;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        padding: 14px 18px;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        display: none;
+        transition: background-color 0.3s ease;
+      }
+
+      #scrollTopBtn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+
+    <!-- Scroll to Top Script -->
+    <script>
+      const scrollBtn = document.getElementById("scrollTopBtn");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      });
+
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
 
     <!-- Scripts -->
     <script src="js/jquery.min.js"></script>
