@@ -25,30 +25,7 @@
         scroll-behavior: smooth;
       }
 
-      .whatsapp-float {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #25D366;
-        color: white;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        text-align: center;
-        font-size: 28px;
-        z-index: 1000;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        animation: pulse 1.5s infinite;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .whatsapp-float:hover {
-        color: white;
-        text-decoration: none;
-        background-color: #1ebe5d;
-      }
+     
 
       @keyframes pulse {
         0% { transform: scale(1); }
@@ -880,10 +857,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
    
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/4917621897246" class="whatsapp-float" target="_blank" aria-label="Chat auf WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
+   <!-- WhatsApp Beating Icon -->
+   <a href="https://wa.me/4917621897246" class="whatsapp-icon" target="_blank" aria-label="Chat auf WhatsApp">
+     <i class="fab fa-whatsapp"></i>
+   </a>
+
     <!-- Scroll to Top Button -->
     <button id="scrollTopBtn" title="Nach oben">
       <i class="fa fa-arrow-up"></i>
@@ -908,6 +886,24 @@
         display: none;
         transition: background-color 0.3s ease;
       }
+        .whatsapp-icon {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 50px;
+          height: 50px;
+          background-color: #25D366;
+          color: white;
+          font-size: 24px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          text-decoration: none;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+          animation: pulse 0.8s infinite;
+          z-index: 1000;
+        }
 
       #scrollTopBtn:hover {
         background-color: #0056b3;
