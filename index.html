@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <title>Reinigungsfirma - Kostenloses Bootstrap 4 Template von Colorlib</title>
+    <title>Rhein-Neckar Polsterreinigung</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -10,6 +10,9 @@
 
     <!-- Font Awesome 6.4 for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/logo.jpg">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/logo.jpg">
+        <link rel="apple-touch-icon" href="images/logo.jpg"> <!-- for iOS bookmarks -->
 
     <!-- Main Stylesheets -->
     <link rel="stylesheet" href="css/animate.css">
@@ -278,7 +281,11 @@
           <div class="col-md-6 pl-md-5 pt-md-5">
             <div class="row justify-content-start py-5">
               <div class="col-md-12 heading-section ftco-animate">
-                <span class="subheading">Willkommen bei Rhein-Neckar Polsterreinigung</span>
+                  <span class="subheading d-flex align-items-center gap-2">
+                    <img src="images/logo.jpg" alt="Logo" style="height: 80px; width: auto; margin-right: 8px;">
+                    Willkommen bei Rhein-Neckar Polsterreinigung
+                  </span>
+
                 <h2 class="mb-4">Professionelle Polsterreinigung mit Leidenschaft</h2>
                 <p>Bei Rhein-Neckar Polsterreinigung setzen wir auf Zuverlässigkeit, Gründlichkeit und persönlichen Service. Als inhabergeführtes Unternehmen sorgt Benjamin Jahić persönlich für die Zufriedenheit unserer Kunden – von der ersten Kontaktaufnahme bis zum sauberen Ergebnis.</p>
               </div>
@@ -721,40 +728,44 @@
     <!-- Preise -->
     <!-- Preise -->
     <section id="pricing" class="ftco-section bg-light">
-      <style>
-        /* Fast spinning zoom animation */
-        @keyframes fastSpinZoom {
-          0% {
-            transform: scale(0.1) rotate(0deg);
-            opacity: 0;
+        <style>
+          @keyframes fastSpinZoomPause {
+            0% {
+              transform: scale(0.1) rotate(0deg);
+              opacity: 0;
+            }
+            25% {
+              transform: scale(0.5) rotate(720deg);
+              opacity: 0.6;
+            }
+            50% {
+              transform: scale(1) rotate(1440deg);
+              opacity: 1;
+            }
+            100% {
+              transform: scale(1) rotate(1440deg);
+              opacity: 1;
+            }
           }
-          50% {
-            transform: scale(0.5) rotate(720deg);
-            opacity: 0.6;
+
+          .animated-image-container {
+            text-align: center;
+            margin-bottom: 30px;
           }
-          100% {
-            transform: scale(1) rotate(1440deg);
-            opacity: 1;
-          }
-        }
 
-        .animated-image-container {
-          text-align: center;
-          margin-bottom: 30px;
-        }
-
-        .animated-image {
-          width: 300px;
-          height: auto;
-          animation: fastSpinZoom 2s ease-out forwards;
-        }
-
-        @media (max-width: 768px) {
           .animated-image {
-            width: 90%;
+            width: 300px;
+            height: auto;
+            animation: fastSpinZoomPause 20s ease-in-out infinite;
           }
-        }
-      </style>
+
+          @media (max-width: 768px) {
+            .animated-image {
+              width: 90%;
+            }
+          }
+        </style>
+
 
       <div class="container">
         <h2>Preise</h2>
