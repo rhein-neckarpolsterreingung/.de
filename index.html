@@ -48,7 +48,7 @@
               <span class="mailus">Telefon:</span>
               <a href="tel:+4917621897246">+49 176 21897246</a>
               oder <span class="mailus">E-Mail:</span>
-              <a href="mailto:info@rhein-neckarpolsterreinigung.de/">info@rhein-neckarpolsterreinigung.de</a>
+              <a href="mailto:info@rhein-neckarpolsterreinigung.de">info@rhein-neckarpolsterreinigung.de</a>
             </p>
           </div>
           <div class="col-12 col-md d-flex justify-content-md-end">
@@ -543,13 +543,13 @@
         <div class="row">
           <div class="col-12 col-md-4 mb-4">
             <video controls playsinline style="width: 100%; aspect-ratio: 9/16; object-fit: cover;">
-              <source src="videos/video3.mp4" type="video/mp4">
+              <source src="videos/video1.mp4" type="video/mp4">
               Ihr Browser unterstützt keine Videowiedergabe.
             </video>
           </div>
           <div class="col-12 col-md-4 mb-4">
             <video controls playsinline style="width: 100%; aspect-ratio: 9/16; object-fit: cover;">
-              <source src="videos/video3.mp4" type="video/mp4">
+              <source src="videos/video2.mp4" type="video/mp4">
               Ihr Browser unterstützt keine Videowiedergabe.
             </video>
           </div>
@@ -603,44 +603,65 @@
     <!-- Preise -->
     <!-- Preise -->
     <section id="pricing" class="ftco-section bg-light">
-        <style>
-          @keyframes fastSpinZoomPause {
-            0% {
-              transform: scale(0.1) rotate(0deg);
-              opacity: 0;
-            }
-            25% {
-              transform: scale(0.5) rotate(720deg);
-              opacity: 0.6;
-            }
-            50% {
-              transform: scale(1) rotate(1440deg);
-              opacity: 1;
-            }
-            100% {
-              transform: scale(1) rotate(1440deg);
-              opacity: 1;
-            }
+      <style>
+        @keyframes fastSpinZoomPause {
+          0% {
+            transform: scale(0.1) rotate(0deg);
+            opacity: 0;
           }
-
-          .animated-image-container {
-            text-align: center;
-            margin-bottom: 30px;
+          25% {
+            transform: scale(0.5) rotate(720deg);
+            opacity: 0.6;
           }
+          50% {
+            transform: scale(1) rotate(1440deg);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(1) rotate(1440deg);
+            opacity: 1;
+          }
+        }
 
+        .animated-image-container {
+          text-align: center;
+          margin-bottom: 30px;
+        }
+
+        .animated-image {
+          width: 300px;
+          height: auto;
+          animation: fastSpinZoomPause 20s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
           .animated-image {
-            width: 300px;
-            height: auto;
-            animation: fastSpinZoomPause 20s ease-in-out infinite;
+            width: 90%;
           }
+        }
 
-          @media (max-width: 768px) {
-            .animated-image {
-              width: 90%;
-            }
-          }
-        </style>
+        /* Equal height for all pricing boxes */
+        .row .block-7 {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
 
+        .block-7 .text-center {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .pricing-text {
+          min-height: 220px;
+        }
+
+        .price .number {
+          font-weight: bold;
+        }
+      </style>
 
       <div class="container">
         <h2>Preise</h2>
@@ -657,21 +678,16 @@
           </div>
         </div>
 
-
-
         <div class="row">
-          
           <!-- Sofareinigung -->
-          <div class="col-md-6 col-lg-4 ftco-animate">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
             <div class="block-7">
               <div class="text-center">
                 <div class="icon d-flex align-items-center justify-content-center">
                   <span class="fa fa-couch"></span>
                 </div>
                 <h4 class="heading-2">Sofareinigung</h4>
-                <span class="price">
-                  <sup>€</sup><span class="number"> Ab 50</span>
-                </span>
+                <span class="price">Ab <span class="number">50 €</span></span>
                 <ul class="pricing-text mb-5">
                   <li>Reinigung von Stoff- und Ledersofas</li>
                   <li>Frisches und hygienisches Sitzen</li>
@@ -682,89 +698,105 @@
             </div>
           </div>
 
-
           <!-- Matratzenreinigung -->
-          <div class="col-md-6 col-lg-4 ftco-animate">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
             <div class="block-7">
               <div class="text-center">
-                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-bed"></span></div>
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <span class="fa fa-bed"></span>
+                </div>
                 <h4 class="heading-2">Matratzenreinigung</h4>
-                <span class="price"><sup>€</sup><span class="number">50</span></span>
+                <span class="price">Ab <span class="number">30 €</span></span>
                 <ul class="pricing-text mb-5">
                   <li>Entfernung von Milben, Flecken & Gerüchen</li>
                   <li>Für alle Matratzentypen geeignet</li>
+                  <li>Preis abhängig von Größe, Verschmutzung & Aufwand</li>
+                  <li>Endpreis wird nach Besichtigung oder Fotoeinschätzung festgelegt</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <!-- Vorhänge Reinigung -->
-          <div class="col-md-6 col-lg-4 ftco-animate">
+          <!-- Sessel Reinigung -->
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
             <div class="block-7">
               <div class="text-center">
-                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-border-style"></span></div>
-                <h4 class="heading-2">Vorhänge Reinigung</h4>
-                <span class="price"><sup>€</sup><span class="number">50</span></span>
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <span class="fa fa-chair"></span>
+                </div>
+                <h4 class="heading-2">Sessel Reinigung</h4>
+                <span class="price">Ab <span class="number">40 €</span></span>
                 <ul class="pricing-text mb-5">
-                  <li>Sanfte Reinigung von Gardinen & Vorhängen</li>
-                  <li>Ohne Abhängen möglich</li>
+                  <li>Pflege von Sesseln & Einzelstühlen</li>
+                  <li>Für Büro- oder Wohnbereiche</li>
+                  <li>Preis abhängig von Größe, Verschmutzung & Aufwand</li>
+                  <li>Endpreis wird nach Besichtigung oder Fotoeinschätzung festgelegt</li>
                 </ul>
               </div>
             </div>
           </div>
 
           <!-- Autositze Reinigung -->
-          <div class="col-md-6 col-lg-4 ftco-animate">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mt-4">
             <div class="block-7">
               <div class="text-center">
-                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-car"></span></div>
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <span class="fa fa-car"></span>
+                </div>
                 <h4 class="heading-2">Autositze Reinigung</h4>
-                <span class="price"><sup>€</sup><span class="number">50</span></span>
+                <span class="price">Ab <span class="number">60 €</span></span>
                 <ul class="pricing-text mb-5">
                   <li>Reinigung von Stoff- & Ledersitzen</li>
                   <li>Hygienische Innenausstattung</li>
+                  <li>Preis abhängig von Größe, Verschmutzung & Aufwand</li>
+                  <li>Endpreis wird nach Besichtigung oder Fotoeinschätzung festgelegt</li>
                 </ul>
               </div>
             </div>
           </div>
 
           <!-- Teppichreinigung -->
-          <div class="col-md-6 col-lg-4 ftco-animate">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mt-4">
             <div class="block-7">
               <div class="text-center">
-                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-rug"></span></div>
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <span class="fa fa-rug"></span>
+                </div>
                 <h4 class="heading-2">Teppichreinigung</h4>
-                <span class="price"><sup>€</sup><span class="number">50</span></span>
+                <span class="price">Ab <span class="number">20 €</span></span>
                 <ul class="pricing-text mb-5">
                   <li>Tiefenreinigung von Teppichen & Läufern</li>
                   <li>Gegen Schmutz und Allergene</li>
+                  <li>Preis abhängig von Größe, Verschmutzung & Aufwand</li>
+                  <li>Endpreis wird nach Besichtigung oder Fotoeinschätzung festgelegt</li>
                 </ul>
               </div>
             </div>
           </div>
 
           <!-- Stuhlpolsterreinigung -->
-          <div class="col-md-6 col-lg-4 ftco-animate">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mt-4">
             <div class="block-7">
               <div class="text-center">
-                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-chair"></span></div>
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <span class="fa fa-chair"></span>
+                </div>
                 <h4 class="heading-2">Stuhlpolsterreinigung</h4>
-                <span class="price"><sup>€</sup><span class="number">50</span></span>
+                <span class="price">Ab <span class="number">20 €</span></span>
                 <ul class="pricing-text mb-5">
                   <li>Reinigung von Ess- & Bürostühlen</li>
                   <li>Gründliche Polsterpflege</li>
+                  <li>Preis abhängig von Größe, Verschmutzung & Aufwand</li>
+                  <li>Endpreis wird nach Besichtigung oder Fotoeinschätzung festgelegt</li>
                 </ul>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-
     <!-- Contact Section with Light Blue Background -->
-    
     <section id="contact" class="py-5" style="background-color: #eaf4fb;">
       <div class="container">
         <h2 class="text-center mb-5">Kontakt</h2>
@@ -796,15 +828,15 @@
           <div class="col-md-7 mb-4">
             <div class="bg-white p-4 rounded shadow-sm">
               <h4 class="mb-3">Schreiben Sie uns</h4>
-              <form method="POST" id="contactForm">
+              <form method="POST" action="https://formspree.io/f/xvgrddqk" id="contactForm">
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="name" class="form-label small">Ihr Name</label>
-                    <input type="text" class="form-control form-control-sm" id="name" name="name" placeholder="Name">
+                    <input type="text" class="form-control form-control-sm" id="name" name="name" placeholder="Name" required>
                   </div>
                   <div class="col-md-6 mb-3">
                     <label for="email" class="form-label small">E-Mail</label>
-                    <input type="email" class="form-control form-control-sm" id="email" name="email" placeholder="E-Mail">
+                    <input type="email" class="form-control form-control-sm" id="email" name="email" placeholder="E-Mail" required>
                   </div>
                 </div>
                 <div class="mb-3">
@@ -813,10 +845,15 @@
                 </div>
                 <div class="mb-3">
                   <label for="message" class="form-label small">Nachricht</label>
-                  <textarea class="form-control form-control-sm" id="message" name="message" rows="4" placeholder="Ihre Nachricht..."></textarea>
+                  <textarea class="form-control form-control-sm" id="message" name="message" rows="4" placeholder="Ihre Nachricht..." required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm">Nachricht senden</button>
               </form>
+
+              <!-- Success Message -->
+              <div id="formMessage" class="alert alert-success mt-3 d-none" role="alert">
+                ✅ Nachricht gesendet! Vielen Dank für Ihre Kontaktaufnahme.
+              </div>
 
               <!-- Social Media -->
               <div class="row mt-4">
@@ -851,11 +888,8 @@
           <!-- Map and Car Box -->
           <div class="col-md-5 mb-4">
             <div class="bg-white p-3 rounded shadow-sm h-100 d-flex flex-column justify-content-between">
-              <!-- Map Header -->
               <div>
-                <h5 class="text-center text-success fw-bold" style="font-size: 1.25rem;">
-                  Unser Einsatzgebiet
-                </h5>
+                <h5 class="text-center text-success fw-bold" style="font-size: 1.25rem;">Unser Einsatzgebiet</h5>
                 <p class="text-center mb-3" style="font-size: 1rem;">
                   <span class="text-primary fw-semibold">Mannheim</span>,
                   <span class="text-primary fw-semibold">Heidelberg</span>,
@@ -865,85 +899,103 @@
 
                 <!-- Google Map -->
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d42218.44296874992!2d8.466!3d49.4875!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797ce1a55c23015%3A0xf5bcfe1fa5366b3f!2sMannheim!5e0!3m2!1sde!2sde!4v1719150000000"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d42218.44296874992!2d8.466!3d49.4875!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797ce1a55c23015%3A0xf5bcfe1fa5366b3f!2sMannheim!5e0!3m2!1sde!2de!4v1719150000000"
                   width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
                 </iframe>
               </div>
 
               <!-- Car Box -->
-              <head>
-                <meta charset="UTF-8">
-                <title>Mobil unterwegs</title>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-                <style>
-                  .car-box {
-                    position: relative;
-                    color: white;
-                    text-align: center;
-                    padding: 1.5rem;
-                    border-radius: 0.5rem;
-                    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
-                    background: url('images/car.png') center/cover no-repeat;
-                    min-height: 180px;
-                    overflow: hidden;
-                    width: 100%;
-                  }
-
-                  .car-overlay {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(0,0,0,0.5);
-                    border-radius: 0.5rem;
-                    z-index: 0;
-                  }
-
-                  .car-content {
-                    position: relative;
-                    z-index: 1;
-                  }
-
-                  .car-content i {
-                    font-size: 2rem;
-                    margin-bottom: 0.5rem;
-                    display: block;
-                  }
-
-                  .car-content .title {
-                    margin-bottom: 0.25rem;
-                    font-size: 1.25rem;
-                    font-weight: bold;
-                  }
-
-                  .car-content .subtitle {
-                    font-size: 0.875rem;
-                  }
-                </style>
-              </head>
-              <body>
-
-                <div class="car-box">
-                  <div class="car-overlay"></div>
-                  <div class="car-content">
-                    <i class="fa fa-map-marker"></i>
-                    <p class="title">Mobil unterwegs</p>
-                    <p class="subtitle">Wir kommen zu Ihnen!</p>
-                  </div>
+              <div class="car-box mt-3">
+                <div class="car-overlay"></div>
+                <div class="car-content">
+                  <i class="fa fa-map-marker"></i>
+                  <p class="title">Mobil unterwegs</p>
+                  <p class="subtitle">Wir kommen zu Ihnen!</p>
                 </div>
-
-              </body>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Success script -->
+    <script>
+      const form = document.getElementById('contactForm');
+      const formMessage = document.getElementById('formMessage');
 
-    <!-- FontAwesome (for icons) -->
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const action = form.getAttribute('action');
+
+        try {
+          const response = await fetch(action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            form.reset();
+            formMessage.classList.remove('d-none');
+          } else {
+            alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.');
+          }
+        } catch (error) {
+          alert('Fehler beim Senden. Bitte versuchen Sie es später erneut.');
+        }
+      });
+    </script>
+
+    <!-- FontAwesome (if not yet loaded) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-   
+
+    <!-- Car Box Styles (no change) -->
+    <style>
+      .car-box {
+        position: relative;
+        color: white;
+        text-align: center;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+        background: url('images/car.png') center/cover no-repeat;
+        min-height: 180px;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .car-overlay {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        border-radius: 0.5rem;
+        z-index: 0;
+      }
+
+      .car-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .car-content i {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      .car-content .title {
+        margin-bottom: 0.25rem;
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+      .car-content .subtitle {
+        font-size: 0.875rem;
+      }
+    </style>
 
    <!-- WhatsApp Beating Icon -->
    <a href="https://wa.me/4917621897246" class="whatsapp-icon" target="_blank" aria-label="Chat auf WhatsApp">
@@ -1014,6 +1066,12 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
     </script>
+    
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-light text-muted">
+      <small>&copy; <script>document.write(new Date().getFullYear());</script> <a href="https://rhein-neckarpolsterreinigung.de/" class="text-decoration-none text-primary">rhein-neckarpolsterreinigung.de</a>. Alle Rechte vorbehalten.</small>
+    </footer>
+
 
     <!-- Scripts -->
     <script src="js/jquery.min.js"></script>
